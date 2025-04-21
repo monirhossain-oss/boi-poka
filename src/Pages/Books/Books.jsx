@@ -18,9 +18,9 @@ const Books = ({ data }) => {
         <div>
             <h2 className='text-4xl text-center p-6 font-semibold'>Books</h2>
             <Suspense fallback={<h2>Loading...</h2>}>
-                <div className='grid grid-cols-3'>
+                <div className='grid grid-cols-3 gap-6 my-8'>
                     {
-                        data.map(singleData => <Book key={singleData.bookId} singleData={singleData}></Book>)
+                        data && data?.map(singleData => <Book key={singleData.bookId} singleData={singleData}></Book>)
                     }
                 </div>
             </Suspense>
